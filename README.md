@@ -11,6 +11,7 @@ Create the springs.
 ```js
 import springs from 'springs';
 
+// Tension, friction.
 const s1 = springs(140, 10);
 const s2 = springs(10, 1);
 ```
@@ -41,3 +42,8 @@ function onMove({ clientX, clientY }) {
 
 root.addEventListener('mousemove', onMove);
 ```
+
+## Development
+`npm install`
+
+`npm start`
