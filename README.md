@@ -1,6 +1,7 @@
 # Springs
 
-Strings animations made simple.
+### Super simple springs animations.
+Add real fluid physics to you custom javascript animations.
 
 ## Install
 `npm install springs`

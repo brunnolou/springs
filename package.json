@@ -29,5 +29,13 @@
       "neutrino-preset-web",
       "neutrino.config.js"
     ]
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brunnolou/springs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/brunnolou/springs/issues"
+  },
+  "homepage": "https://github.com/brunnolou/springs#readme"
 }
