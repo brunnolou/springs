@@ -1,0 +1,33 @@
+{
+  "name": "springs",
+  "version": "0.0.1",
+  "description": "Super simple springs for custom animation",
+  "main": "index.js",
+  "scripts": {
+    "build": "neutrino build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "springs",
+    "animation",
+    "physics"
+  ],
+  "author": "Bruno Lourenco",
+  "license": "MIT",
+  "dependencies": {
+    "neutrino-preset-web": "^4.2.3",
+    "rebound": "0.0.13"
+  },
+  "devDependencies": {
+    "neutrino": "^4.3.1",
+    "neutrino-preset-node": "^4.2.2",
+    "relatify": "^0.3.4"
+  },
+  "config": {
+    "neutrino": {},
+    "presets": [
+      "neutrino-preset-web",
+      "neutrino.config.js"
+    ]
+  }
+}
