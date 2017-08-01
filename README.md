@@ -30,12 +30,12 @@ function update() {
 requestAnimationFrame(update);
 ```
 
-Update the value as you wish.
+Update the end value of the spring, in this case update `x` and `y` with mouse move.
 ```js
-// Mouse move example.
 let x = 0;
 let y = 0;
 
+// Mouse move example.
 function onMove({ clientX, clientY }) {
   x = clientX / 200;
   y = clientY / 200;

@@ -1,9 +1,13 @@
-var rebound = require('rebound');
+var rebound = require("rebound");
 
-function springs(t, f, onUpdate = () => {}) {
+function springs(
+  tension = 30,
+  friction = 1,
+  { onInit = () => {}, onUpdate = () => {}, onActivate = () => {}, onRest = () => {} } = {}
+) {
   // create a SpringSystem and a Spring with a bouncy config.
   var springSystem = new rebound.SpringSystem();
-  var spring = springSystem.createSpring(t, f);
+  var spring = springSystem.createSpring(tension, friction);
 
   var value = 0;
 
@@ -11,15 +15,27 @@ function springs(t, f, onUpdate = () => {}) {
     onSpringUpdate(spring) {
       value = spring.getCurrentValue();
 
-      onUpdate(value);
+      onUpdate(value, spring);
+    },
+    onSpringAtRest(spring) {
+      value = spring.getCurrentValue();
+
+      onRest(value, spring);
+    },
+    onSpringActivate(spring) {
+      value = spring.getCurrentValue();
+
+      onActivate(value, spring);
     }
   });
 
-  return (endValue) => {
+	onInit(spring);
+
+  return endValue => {
     spring.setEndValue(endValue);
 
     return value;
-  }
+  };
 }
 
 module.exports = springs;
