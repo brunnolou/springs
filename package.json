@@ -1,6 +1,6 @@
 {
   "name": "springs",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "description": "Super simple springs for custom animation",
   "main": "index.js",
   "scripts": {
