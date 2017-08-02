@@ -6,7 +6,7 @@
   "scripts": {
     "start": "neutrino start",
     "build": "babel src | uglifyjs -b -o lib/index.js && uglifyjs lib/index.js -m -c -o lib/index.min.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [
     "spring",
@@ -25,6 +25,8 @@
     "eslint": "^3.19.0",
     "eslint-config-airbnb-base": "^11.2.0",
     "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jest": "^20.0.3",
+    "jest": "^20.0.4",
     "neutrino": "^6.1.5",
     "neutrino-preset-web": "^6.1.5",
     "uglifyjs": "^2.4.11"
