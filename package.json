@@ -25,17 +25,9 @@
     "eslint": "^3.19.0",
     "eslint-config-airbnb-base": "^11.2.0",
     "eslint-plugin-import": "^2.7.0",
-    "neutrino": "^4.3.1",
-    "neutrino-preset-node": "^4.2.2",
-    "neutrino-preset-web": "^4.2.3",
+    "neutrino": "^6.1.5",
+    "neutrino-preset-web": "^6.1.5",
     "uglifyjs": "^2.4.11"
-  },
-  "config": {
-    "neutrino": {},
-    "presets": [
-      "neutrino-preset-web",
-      "neutrino.config.js"
-    ]
   },
   "repository": {
     "type": "git",

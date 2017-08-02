@@ -66,4 +66,8 @@ friction = 1,
 ## Development
 `npm install`
 
+## Demo
+
 `npm start`
+
+`./example/` folder will be running on: `http://localhost:5000`
