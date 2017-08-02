@@ -1,7 +1,7 @@
 # Springs
 [![npm version](https://badge.fury.io/js/springs.svg)](https://badge.fury.io/js/springs)
 ![](https://david-dm.org/brunnolou/springs.svg)
-![](https://img.shields.io/github/size/brunnolou/springs/lib/index.js.svg)
+![](https://img.shields.io/github/size/brunnolou/springs/lib/index.min.js.svg)
 
 ### Super simple springs animations.
 Add real fluid physics to you custom javascript animations.
