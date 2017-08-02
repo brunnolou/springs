@@ -1,4 +1,7 @@
 # Springs
+[![npm version](https://badge.fury.io/js/springs.svg)](https://badge.fury.io/js/springs)
+![](https://david-dm.org/brunnolou/springs.svg)
+![](https://img.shields.io/github/size/brunnolou/springs/lib/index.js.svg)
 
 ### Super simple springs animations.
 Add real fluid physics to you custom javascript animations.
@@ -41,7 +44,23 @@ function onMove({ clientX, clientY }) {
   y = clientY / 200;
 }
 
-root.addEventListener('mousemove', onMove);
+document.addEventListener('mousemove', onMove);
+```
+
+### Events
+
+```js
+springs(tension, friction, { events })
+````
+- `onInit`
+- `onUpdate`
+- `onActivate`
+- `onRest`
+
+### Defaults
+```js
+tension = 30,
+friction = 1,
 ```
 
 ## Development
