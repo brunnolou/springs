@@ -1,40 +1,41 @@
-import springs from '../';
+const rebound = require('rebound');
 
-///////////////////////////////////////////////////////////////
-// Create DOM.
-var root = document.getElementById('root');
+function springs(
+  tension = 30,
+  friction = 1,
+  { onInit = () => {}, onUpdate = () => {}, onActivate = () => {}, onRest = () => {} } = {},
+) {
+  // create a SpringSystem and a Spring with a bouncy config.
+  const springSystem = new rebound.SpringSystem();
+  const spring = springSystem.createSpring(tension, friction);
 
-root.style.width = '200px';
-root.style.height = '200px';
-root.style.border = '1px solid #333';
-root.style.display = 'table-cell';
-root.style.verticalAlign = 'middle';
-root.style.textAlign = 'center';
+  let value = 0;
 
-var el = root.appendChild(document.createElement('img'));
-el.src = 'http://facebook.github.io/rebound/images/rebound.png';
-///////////////////////////////////////////////////////////////
+  spring.addListener({
+    onSpringUpdate(theSpring) {
+      value = theSpring.getCurrentValue();
 
-// Create 2 springs.
-const s1 = springs(140, 10);
-const s2 = springs(10, 1);
+      onUpdate(value, theSpring);
+    },
+    onSpringAtRest(theSpring) {
+      value = theSpring.getCurrentValue();
 
-let x = 1;
-let y = 0;
+      onRest(value, theSpring);
+    },
+    onSpringActivate(theSpring) {
+      value = theSpring.getCurrentValue();
 
-function onMove({ clientX, clientY }) {
-  x = clientX / 200;
-  y = clientY / 200;
+      onActivate(value, theSpring);
+    },
+  });
+
+  onInit(spring);
+
+  return (endValue) => {
+    spring.setEndValue(endValue);
+
+    return value;
+  };
 }
 
-root.addEventListener('mousemove', onMove);
-
-// Request Animation Frame logic.
-function update() {
-  el.style.transform = 'scale3d(' + s1(x) + ', ' + s2(y) + ', 1)';
-
-  requestAnimationFrame(update);
-}
-
-requestAnimationFrame(update);
-
+module.exports = springs;

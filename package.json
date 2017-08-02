@@ -2,15 +2,17 @@
   "name": "springs",
   "version": "1.0.1",
   "description": "Super simple springs for custom animation",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "start": "neutrino start",
+    "build": "babel src -d lib",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "springs",
+    "spring",
     "animation",
-    "physics"
+    "physics",
+    "springs"
   ],
   "author": "Bruno Lourenco",
   "license": "MIT",
@@ -18,10 +20,14 @@
     "rebound": "0.0.13"
   },
   "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-import": "^2.7.0",
     "neutrino": "^4.3.1",
     "neutrino-preset-web": "^4.2.3",
-    "neutrino-preset-node": "^4.2.2",
-    "relatify": "^0.3.4"
+    "neutrino-preset-node": "^4.2.2"
   },
   "config": {
     "neutrino": {},
